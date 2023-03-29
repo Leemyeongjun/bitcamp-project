@@ -16,7 +16,7 @@ document.querySelector("#btn-insert").onclick = () => {
     })
     .then((result) => {
       if (result.status == "success") {
-        location.reload();
+        location.href='../auth/login.html';
       } else {
         alert("입력 실패!");
         console.log(result.data);

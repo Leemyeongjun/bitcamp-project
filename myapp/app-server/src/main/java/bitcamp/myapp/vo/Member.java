@@ -13,10 +13,7 @@ public class Member {
   private String email;
   private String password;
   private String tel;
-  private String created_date;
 
-  @JsonFormat(
-      shape = Shape.STRING,
-      pattern = "yyyy-MM-dd")
-  private Date createdDate;
+  @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
+  private Date created_Date;
 }

@@ -18,6 +18,43 @@
     insert into gh_member(name, nickname, email, password, tel)
     values(#{name}, #{nickname}, #{email}, sha2(#{password},256), #{tel})
   </insert>
+  
+  <select id="findAll" resultMap="memberMap">
+    select
+      m.member_id,
+      m.name,
+      m.tel
+    from 
+      gh_member m
+    order by
+      m.name asc
+  </select>
 
+  <select id="findByNo" parameterType="int" resultMap="memberMap">
+    select
+      m.member_id,
+      m.name,
+      m.email,
+      m.tel,
+      m.created_date
+    from 
+      gh_member m
+    where m.member_id=#{no}
+  </select>
+  
+  <select id="findByEmailAndPassword" parameterType="map" resultMap="memberMap">
+    select
+      m.member_id,
+      m.name,
+      m.nickname,
+      m.email,
+      m.tel
+    from 
+      gh_member m
+    where 
+      m.email = #{email}
+      and m.password = sha2(#{password},256)
+  </select>
+  
 </mapper>
 
