@@ -1,0 +1,25 @@
+.login {
+	display: none;
+}
+.logout {
+	display: none;
+}
+.signup {
+	display: none;
+}
+
+#header {
+	margin-top: 30px;
+}
+
+#body {
+	margin-top: 50px;
+}
+
+#movie > li {
+	list-style: none;
+	margin: 15px;
+	border: 1px solid;
+	width: 200px;
+	height: 200px;
+}
