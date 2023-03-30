@@ -7,45 +7,90 @@
     <link href="index.css" rel="stylesheet">
   </head>
   <body>
-  <div class="container text-center">
-    <div class="row" id="header">
-      <div class="col-2">
-        홈로고
+  <div class="main">
+    <div class="container">
+
+      <div class="header">
+        <div class="header-head">
+          <img src="img/logo.png" class="logo">
+          <p id="logo">여긴 좋아</p>
+        </div>
+        <div class="header-middle">
+          <form class="input-text">
+            <input type="text" class="search" placeholder="Search Item More">
+          </form>
+        </div>
+        <div class="header-tail">
+          <ul>
+            <li class="signup" id="signup">Create</li>
+            <li class="login" id="login">Connect</li>
+            <li class="logout" id="logout">
+              <a href="app/auth/logout" onclick="logout(); return false;">
+                로그아웃(<span id="nickname"></span>)</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="col-6">
-        검색
+
+      <div class="body">
+        <div class="cate">
+          <ul class="list">
+            <li>HOT 플레이스</li>
+            <li class="board">커뮤니티</li>
+          </ul>
+          <ul class="list-best">
+            <li>인기순<img src="img/vec.png" class="checkv"></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="mbox">
+            <li><img src="img/img1.png"></li>
+            <li><img src="img/img2.png"></li>
+            <li><img src="img/img3.png"></li>
+            <li><img src="img/img4.png"></li>
+            <li><img src="img/img5.png"></li>
+            <li><img src="img/img6.png"></li>
+            <li><img src="img/img7.png"></li>
+            <li><img src="img/img8.png"></li>
+          </ul>
+        </div>
       </div>
-      <div class="col-3">
-        <button class="login">Connect</button>
-        <button class="logout">
-          <a href="app/auth/logout" onclick="logout(); return false;">
-            로그아웃(<span id="nickname"></span>)</a>
-        </button>
-        <button class="signup">Create</button>
+
+      <div class="footer">
+        <div class="footer-main">
+          <div>
+            <ul class="main-f">
+              <li class="f-f"><img src="img/logo.png" class="logo"><span>여긴 좋아</span></li>
+              <li class="f-s">Get the lates Updates</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="main-s">
+              <li class="s-f">가나다라</li>
+              <li class="s-s">가나다</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="main-t">
+              <li class="t-f">Support</li>
+              <li class="t-s">Help center</li>
+              <li class="t-t">Terms of service</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-tail">
+          <div class="footer-tail-left">여긴 좋아,lnc.All Rights</div>
+          <div class="footer-tail-right">
+            <img src="img/Instagram.png" class="insta">
+            <img src="img/twitter.png" class="twi">
+            <img src="img/telegram.png" class="tele">
+            <img src="img/Discord.png" class="disc">
+          </div>
+        </div>
       </div>
+
     </div>
-
-    <div class="col" id="body">
-      <div class="col-4">
-        <button class="live">동영상</button>
-        <button class="board">게시판</button>
-      </div>
-      <div class="col">
-        <ul class="row" id="movie">
-          <li class="col"></li>
-          <li class="col"></li>
-          <li class="col"></li>
-          <li class="col"></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="col" id="footer">
-
-    </div>
-
   </div>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="index.js"></script>  
 </body>

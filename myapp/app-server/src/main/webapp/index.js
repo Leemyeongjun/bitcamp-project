@@ -11,6 +11,14 @@ document.querySelector('.board').addEventListener('click', function() {
 	location.href='board/list.html';
 });
 
+document.querySelector('.logo').addEventListener('click', function() {
+	location.href='index.html';
+});
+
+document.querySelector('#logo').addEventListener('click', function() {
+	location.href='index.html';
+});
+
 fetch("auth/user")
 	.then((response) => {
 		return response.json();
