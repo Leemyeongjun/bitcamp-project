@@ -1,53 +1,141 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-</head>
-<body>
-	<form id="member-form">
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>비트캠프 - NCP 1기</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="signup.css" rel="stylesheet">
+  </head>
+  <body>
+  <div class="main">
     <div class="container">
-        <h1>회원가입</h1>
-        <div class="form-group">
-            <label for="inputEmail4">이름</label>
-            <input type="text" class="form-control" id="inputEmail4" name="name" placeholder="사용자 아이디">
+
+      <div class="header">
+        <div class="header-head">
+          <img src="../img/logo.png" class="logo">
+          <p id="logo">여긴 좋아</p>
         </div>
-        <div class="form-group">
-            <label for="inputAddress">닉네임</label>
-            <input type="text" class="form-control" id="inputAddress" name="nickname" placeholder="사용자 별명" oninput="checkId()">
+        <div class="header-middle">
+          <form class="input-text">
+            <input type="text" class="search" placeholder="Search Item More">
+          </form>
         </div>
-				<div class="form-group">
-					<label for="inputAddress">이메일</label>
-					<input type="text" class="form-control" id="inputAddress" name="email" placeholder="사용자 이메일">
-				</div>
-        <div class="form-group">
-            <label for="inputPassword4">password</label>
-            <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="사용자 비밀번호">
+        <div class="header-tail">
+          <ul>
+            <li class="signup" id="signup">Create</li>
+            <li class="login" id="login">Connect</li>
+            <li class="logout" id="logout">
+              <a href="app/auth/logout" onclick="logout(); return false;">
+                로그아웃(<span id="nickname"></span>)</a>
+            </li>
+          </ul>
         </div>
-				<div class="form-group">
-					<label for="inputAddress">전화번호</label>
-					<input type="text" class="form-control" id="inputAddress" name="tel" placeholder="사용자 전화번호">
-				</div>
-        <button type="submit" class="btn btn-primary" id="btn-insert">가입 완료</button>
+      </div>
+
+      <div class="body">
+        <div class="cate">
+          <ul class="list">
+            <li>HOT 플레이스</li>
+            <li class="board">커뮤니티</li>
+          </ul>
+        </div>
+        <div class="member-body">
+          <div class="member-form-img">
+
+          </div>
+          <form id="member-form" class="member-form">
+            <h3>회원가입</h3>
+						<table>
+            <tr>
+              <th class="email-th">이름</th>
+              <td><input type="name" name="name" 
+                  value="" class="name"></td>
+            </tr>
+            <tr>
+              <th class="email-th">NickName</th>
+              <td><input type="nickname" name="nickname" 
+                  value="" class="nickname"></td>
+            </tr>
+						<tr>
+							<th class="email-th">Email</th>
+							<td><input type="email" name="email" 
+									value="" class="email"></td>
+						</tr>
+						<tr>
+							<th class="password-th">password</th>
+							<td><input type="password" name="password" class="password"></td>
+						</tr>
+            <tr>
+							<th class="password-th">tel</th>
+							<td><input type="tel" name="tel" class="tel"></td>
+						</tr>
+						</table>
+						
+						<div>
+							<button type="submit" class="btn btn-primary" id="btn-insert">생성하기</button>
+						</div>
+
+            <div class="under-line">
+              <p class="line1"></p>
+              <p class="line2">Or</p>
+              <p class="line3"></p>
+            </div>
+            <div class="login-other">
+              <button type="submit" class="btn-facebook">Continue with Facebook</button>
+              <button type="submit" class="btn-google">Continue with Google</button>
+            </div>
+						</form>
+						
+						<script id="tr-template" type="text/x-handlebars-template">
+              {{#each this}}
+                <tr data-no="{{no}}" onclick="getMember(event)">
+                  <td>{{no}}</td>
+                  <td>{{name}}</td>
+                  <td>{{nickname}}</td>
+                  <td>{{email}}</td>
+                  <td>{{tel}}</td>
+                </tr>
+              {{/each}}
+            </script>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-main">
+          <div>
+            <ul class="main-f">
+              <li class="f-f"><img src="../img/logo.png" class="logo"><span>여긴 좋아</span></li>
+              <li class="f-s">Get the lates Updates</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="main-s">
+              <li class="s-f">가나다라</li>
+              <li class="s-s">가나다</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="main-t">
+              <li class="t-f">Support</li>
+              <li class="t-s">Help center</li>
+              <li class="t-t">Terms of service</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-tail">
+          <div class="footer-tail-left">여긴 좋아,lnc.All Rights</div>
+          <div class="footer-tail-right">
+            <img src="../img/Instagram.png" class="insta">
+            <img src="../img/twitter.png" class="twi">
+            <img src="../img/telegram.png" class="tele">
+            <img src="../img/Discord.png" class="disc">
+          </div>
+        </div>
+      </div>
+
     </div>
-	</form>
-
-	<script id="tr-template" type="text/x-handlebars-template">
-		{{#each this}}
-			<tr data-no="{{no}}" onclick="getMember(event)">
-				<td>{{no}}</td>
-				<td>{{name}}</td>
-				<td>{{nickname}}</td>
-				<td>{{email}}</td>
-				<td>{{tel}}</td>
-			</tr>
-		{{/each}}
-	</script>
-
-	<script src="../node_modules/handlebars/dist/handlebars.js"></script>
-	<script src="signup.js"></script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+  <script src="signup.js"></script> 
 </body>
 </html>
