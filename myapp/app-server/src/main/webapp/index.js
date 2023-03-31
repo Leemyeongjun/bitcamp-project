@@ -1,4 +1,5 @@
 
+
 document.querySelector('.signup').addEventListener('click', function() {
 	location.href='sign/signup.html';
 });

@@ -1,38 +1,110 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset='UTF-8'>
-<title>비트캠프 - NCP 1기</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <title>비트캠프 - NCP 1기</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="form.css" rel="stylesheet">
+  </head>
 <body>
-<h1>게시판</h1>
+  <div class="main">
+    <div class="container">
 
-<div>
-  <form id='board-form' method='post' enctype="multipart/form-data">
-  <table border='1'>
-  <tr>
-    <th>제목</th>
-    <td><input type='text' name='title'></td>
-  </tr>
-  <tr>
-    <th>내용</th>
-    <td><textarea name='content' rows='10' cols='60'></textarea></td>
-  </tr>
-  <tr>
-    <th>첨부파일</th>
-    <td>
-      <input type="file" name='files' multiple>
-    </td>
-  </tr>
-  </table>
-  
-  <div>
-    <button id="btn-insert" type="button">등록</button>
-    <button id='btn-cancel' type='button'>취소</button>
+      <div class="header">
+        <div class="header-head">
+          <img src="../img/logo.png" class="logo">
+          <p id="logo">여긴 좋아</p>
+        </div>
+        <div class="header-middle">
+          <form class="input-text">
+            <input type="text" class="search" placeholder="Search Item More">
+          </form>
+        </div>
+        <div class="header-tail">
+          <ul>
+            <li class="signup" id="signup">Create</li>
+            <li class="login" id="login">Connect</li>
+            <li class="logout" id="logout">
+              <a href="app/auth/logout" onclick="logout(); return false;">
+                로그아웃(<span id="nickname"></span>)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="body">
+        <form id='board-form' method='post' enctype="multipart/form-data">
+        <table>
+        <tr>
+          <select class='category' id="category">
+            <option vlaue="">게시판 분류</option>
+            <option value="2">자유</option>
+            <option value="3">QnA</option>
+            <option value="4">맛집&이색카페</option>
+            <option value="5">여행정보</option>
+            <option value="6">여행동행</option>
+          </select>
+        </tr>
+        <tr>
+          <!-- <th>제목</th> -->
+          <td><input class="title" placeholder="제목을 입력해주세요." type='text' name='title'></td>
+        </tr>
+        <tr>
+          <!-- <th>내용</th> -->
+          <td><textarea class="content" placeholder="내용을 입력해주세요." name='content'></textarea></td>
+        </tr>
+        <tr>
+          <!-- <th>첨부파일</th> -->
+          <td>
+            <input type="file" type="file" name='files' multiple>
+          </td>
+        </tr>
+        </table>
+        
+        <div class="board-btn">
+          <button class="btn-insert" id="btn-insert" type="button">등록</button>
+          <button class="btn-cancel" id='btn-cancel' type='button'>취소</button>
+        </div>
+        </form>
+      </div>
+
+
+      <div class="footer">
+        <div class="footer-main">
+          <div>
+            <ul class="main-f">
+              <li class="f-f"><img src="../img/logo.png" class="logo"><span>여긴 좋아</span></li>
+              <li class="f-s">Get the lates Updates</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="main-s">
+              <li class="s-f">가나다라</li>
+              <li class="s-s">가나다</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="main-t">
+              <li class="t-f">Support</li>
+              <li class="t-s">Help center</li>
+              <li class="t-t">Terms of service</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-tail">
+          <div class="footer-tail-left">여긴 좋아,lnc.All Rights</div>
+          <div class="footer-tail-right">
+            <img src="../img/Instagram.png" class="insta">
+            <img src="../img/twitter.png" class="twi">
+            <img src="../img/telegram.png" class="tele">
+            <img src="../img/Discord.png" class="disc">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  </form>
-</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <script src="form.js"></script>
 </body>
 </html>
