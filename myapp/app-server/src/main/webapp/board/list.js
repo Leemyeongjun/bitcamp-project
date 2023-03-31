@@ -5,7 +5,7 @@ document.querySelector('.signup').addEventListener('click', function() {
 });
 
 document.querySelector('.login').addEventListener('click', function() {
-	location.href='login.html';
+	location.href='../auth/login.html';
 });
 
 document.querySelector('.logo').addEventListener('click', function() {
